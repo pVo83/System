@@ -3,12 +3,13 @@
 
   &__inner {
     display: flex;
-    gap: 10px;
+    gap: 20px;
   }
 }
 
 .feature {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
 
   svg {

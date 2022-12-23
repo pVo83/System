@@ -12,25 +12,32 @@
   }
 
   &__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
     gap: 20px;
   }
 }
 
 .benefit {
+  width: calc(100% / 3);
 
   &__images {
+    position: relative;
     display: block;
     height: 317px;
     margin-bottom: 32px;
+    overflow: hidden;
   }
 
   &__img {
     display: block;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
+    transition: scale .40s ease;
+
+    &:hover {
+      scale: 1.10;
+    }
   }
 
   &__title {

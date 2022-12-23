@@ -41,15 +41,30 @@
   height: 650px;
 }
 .banner__images {
+  position: relative;
+  background-color: #D9D9D9;
   display: block;
   height: 450px;
   width: 50%;
+}
+.banner__images::before {
+  content: "";
+  width: 100%;
+  height: 450px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 .banner__img {
   display: block;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 0% 50%;
+     object-position: 0% 50%;
+  border-radius: 4px;
 }
 .banner__box {
   width: 50%;
@@ -76,6 +91,7 @@
   background-color: #0096A7;
   border-radius: 50px;
   border: 0.5px solid #0096A7;
+  cursor: pointer;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -95,11 +111,12 @@
 }
 .features__inner {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .feature {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
 }
 .feature svg {
@@ -137,22 +154,30 @@
   margin-bottom: 32px;
 }
 .benefits__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
   gap: 20px;
 }
 
+.benefit {
+  width: 33.3333333333%;
+}
 .benefit__images {
+  position: relative;
   display: block;
   height: 317px;
   margin-bottom: 32px;
+  overflow: hidden;
 }
 .benefit__img {
   display: block;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 4px;
+  transition: scale 0.4s ease;
+}
+.benefit__img:hover {
+  scale: 1.1;
 }
 .benefit__title {
   color: #424A57;

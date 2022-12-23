@@ -14,6 +14,11 @@
   margin-right: 80px;
   flex-shrink: 0;
 }
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
 .header__list {
   display: flex;
   align-items: center;
@@ -30,15 +35,139 @@
   color: #0096A7;
 }
 
+.header {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .header__burger {
+    display: none;
+  }
+}
+.header__burger-line {
+  width: 35px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 74px;
+  right: 20px;
+  transition: 0.5s ease;
+  transition-delay: 0.2s;
+}
+.header__burger-line:after {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background-color: white;
+  display: inline-block;
+  transform: translateY(-16px);
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  transition: 0.6s ease;
+  transition-delay: 0.2s;
+}
+.header__burger-btn {
+  position: absolute;
+  top: -30px;
+  right: -12px;
+  width: 50px;
+  height: 50px;
+}
+.header__burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 50px);
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: calc(-100% - 50px);
+  transition: 0.5s ease;
+  z-index: 4;
+  padding: 0 40px;
+}
+.header__burger-overlay {
+  width: calc(100% - 0px);
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: fixed;
+  top: 0;
+  right: calc(-100% - 50px);
+  z-index: 1;
+  transition: 0.6s ease;
+}
+
+.check:checked ~ .header__burger-menu {
+  right: 0px;
+  transition: 0.5s ease;
+}
+
+.check:checked ~ .header__burger-overlay {
+  right: 0px;
+  transition: 0.3s ease;
+}
+
+.check:checked ~ .header__burger-line {
+  right: -55px;
+  transition: 0.5s ease;
+}
+
+.check:checked ~ .header__burger-line:after {
+  right: -55px;
+  transition: 0.5s ease;
+}
+
+.check {
+  display: none;
+}
+
+.burger-menu__list {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+.burger-menu__link {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 44px;
+  transition: color 0.25s ease;
+}
+.burger-menu__link:hover {
+  color: #0096A7;
+}
+.burger-menu__logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
 .banner {
   width: 100%;
   background-color: hsla(216deg, 38%, 97%, 0.9);
+}
+@media screen and (max-width: 1024px) {
+  .banner {
+    padding: 100px 0;
+  }
 }
 .banner__inner {
   display: flex;
   align-items: center;
   gap: 60px;
   height: 650px;
+}
+@media screen and (max-width: 1024px) {
+  .banner__inner {
+    display: block;
+    height: auto;
+  }
 }
 .banner__images {
   position: relative;
@@ -57,6 +186,15 @@
   left: 0;
   background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
+@media screen and (max-width: 1024px) {
+  .banner__images {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    width: 100%;
+    background-color: #D9D9D9;
+  }
+}
 .banner__img {
   display: block;
   height: 100%;
@@ -66,8 +204,20 @@
      object-position: 0% 50%;
   border-radius: 4px;
 }
+@media screen and (max-width: 1024px) {
+  .banner__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
 .banner__box {
   width: 50%;
+}
+@media screen and (max-width: 1024px) {
+  .banner__box {
+    width: auto;
+  }
 }
 .banner__title {
   color: #000;
@@ -75,6 +225,18 @@
   font-weight: 700;
   line-height: 64px;
   margin-bottom: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .banner__title {
+    text-align: center;
+    margin: 0 20px;
+    margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .banner__title {
+    font-size: 44px;
+  }
 }
 .banner__desc {
   color: rgba(0, 0, 0, 0.87);
@@ -84,6 +246,18 @@
   margin-bottom: 32px;
   margin-right: 20px;
 }
+@media screen and (max-width: 1024px) {
+  .banner__desc {
+    text-align: center;
+    margin: 0 60px;
+    margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .banner__desc {
+    font-size: 17px;
+  }
+}
 .banner__bth {
   display: block;
   width: 251px;
@@ -91,6 +265,7 @@
   background-color: #0096A7;
   border-radius: 50px;
   border: 0.5px solid #0096A7;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   color: #fff;
   font-size: 16px;
@@ -105,6 +280,17 @@
   color: #0096A7;
   background-color: rgba(0, 150, 167, 0);
 }
+@media screen and (max-width: 1024px) {
+  .banner__bth {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 645px) {
+  .banner__bth {
+    font-size: 14px;
+  }
+}
 
 .features {
   margin-top: 85px;
@@ -113,11 +299,22 @@
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 1024px) {
+  .features__inner {
+    display: block;
+  }
+}
 
 .feature {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .feature {
+    margin-bottom: 32px;
+    display: flex;
+  }
 }
 .feature svg {
   width: 44px;
@@ -153,13 +350,36 @@
   text-align: left;
   margin-bottom: 32px;
 }
+@media screen and (max-width: 1024px) {
+  .benefits__text {
+    text-align: center;
+  }
+}
 .benefits__inner {
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 1024px) {
+  .benefits__inner {
+    display: block;
+  }
+}
 
 .benefit {
   width: 33.3333333333%;
+}
+@media screen and (max-width: 1024px) {
+  .benefit {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 645px) {
+  .benefit {
+    display: block;
+  }
 }
 .benefit__images {
   position: relative;
@@ -167,6 +387,12 @@
   height: 317px;
   margin-bottom: 32px;
   overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .benefit__images {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 .benefit__img {
   display: block;
@@ -178,6 +404,18 @@
 }
 .benefit__img:hover {
   scale: 1.1;
+}
+@media screen and (max-width: 1024px) {
+  .benefit__img {
+    height: 100%;
+    width: 100%;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+}
+.benefit__text {
+  display: block;
+  width: 100%;
 }
 .benefit__title {
   color: #424A57;
@@ -195,6 +433,11 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
+}
+@media screen and (max-width: 645px) {
+  .benefit__desc {
+    margin-bottom: 24px;
+  }
 }
 
 .footer {
@@ -246,4 +489,8 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.wrapper {
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

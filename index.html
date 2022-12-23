@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/assets/style/css/main.css">
   <title>System</title>
 </head>
+
 <body>
   <!-- svg -->
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
@@ -62,6 +63,29 @@
               <li><a class="header__link" href="#">Преимущества </a></li>
             </ul>
           </nav>
+          <!--  -->
+          <div class="header__burger">
+            <input class="check" type="checkbox" id="checkbox">
+            <label class="header__burger-line" for="checkbox">
+              <div class="header__burger-btn"></div>
+            </label>
+            <label class="header__burger-overlay" for="checkbox">
+            </label>
+            <div class="header__burger-menu">
+              <a class="burger-menu__logo" href="#!">
+                <svg width="190" height="32" viewBox="0 0 190 32">
+                  <use href="#logotip"></use>
+                </svg>
+              </a>
+              <nav class="burger-menu__nav">
+                <ul class="burger-menu__list">
+                  <li><a class="burger-menu__link" href="#">Домой</a></li>
+                  <li><a class="burger-menu__link" href="#">Особенности</a></li>
+                  <li><a class="burger-menu__link" href="#">Преимущества </a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -140,27 +164,33 @@
               <picture class="benefit__images">
                 <img class="benefit__img" src="/assets/style/img/Big Img-1.png" alt="img">
               </picture>
-              <h3 class="benefit__title">Поддержка 24/7</h3>
-              <p class="benefit__desc">Вы можете положиться на нашу круглосуточную
-                поддержку, которая решит любой вопрос в течении часа</p>
+              <div class="benefit__text">
+                <h3 class="benefit__title">Поддержка 24/7</h3>
+                <p class="benefit__desc">Вы можете положиться на нашу круглосуточную
+                  поддержку, которая решит любой вопрос в течении часа</p>
+              </div>
             </div>
 
             <div class="benefit">
               <picture class="benefit__images">
                 <img class="benefit__img" src="/assets/style/img/Big Img-2.png" alt="img">
               </picture>
-              <h3 class="benefit__title">Гарантия возврата</h3>
-              <p class="benefit__desc">Если вам не понравится сервис, мы вернем вам
-                полную стоимость в течении 30-дневного периода</p>
+              <div class="benefit__text">
+                <h3 class="benefit__title">Гарантия возврата</h3>
+                <p class="benefit__desc">Если вам не понравится сервис, мы вернем вам
+                  полную стоимость в течении 30-дневного периода</p>
+              </div>
             </div>
 
             <div class="benefit">
               <picture class="benefit__images">
                 <img class="benefit__img" src="/assets/style/img/Big Img-3.png" alt="img">
               </picture>
-              <h3 class="benefit__title">Удобство и простота</h3>
-              <p class="benefit__desc">Все наши сервисы и приложения интуитивно понятны
-                для пользователей всех уровней</p>
+              <div class="benefit__text">
+                <h3 class="benefit__title">Удобство и простота</h3>
+                <p class="benefit__desc">Все наши сервисы и приложения интуитивно понятны
+                  для пользователей всех уровней</p>
+              </div>
             </div>
             <!--  -->
           </div>
@@ -203,4 +233,5 @@
   </div>
   <!-- /.wrapper -->
 </body>
+
 </html>
